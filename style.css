@@ -23,12 +23,37 @@
     font-size: 1rem;
   }
 
-  h1,
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .contact-form,
+  aside {
+    width: 100%;
+  }
+
+  nav.links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav.links a {
+    font-size: 1rem;
+  }
+
   h2,
-  h3 {
-    font-size: 1.5rem;
+  h4 {
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
+
 
 /* main page */
 body {
@@ -171,29 +196,27 @@ button.c-button:hover {
 }
 
 /* about me */
-.description {
-  margin-top: 5em;
-
-  h2 {
-    color: var(--font-color);
-  }
-
-  h3 {
-    text-align: center;
-    margin-top: 200px;
-    color: white;
-  }
-  p {
-    color: white;
-  }
+.description, .about-icons {
+  margin: 2rem 2rem 2rem 0;
+  padding-left: 2rem;
 }
 
 .techs ul {
-  list-style: none;
+  list-style-type: square;
+  padding-left: 1rem;
+}
+
+.languages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1;
   margin-bottom: 20px;
   text-align: justify;
