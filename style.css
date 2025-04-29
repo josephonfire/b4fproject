@@ -201,9 +201,13 @@ button.c-button:hover {
   padding-left: 2rem;
 }
 
+.description h2 {
+  color: var(--font-color);
+}
+
 .techs ul {
-  list-style-type: square;
-  padding-left: 1rem;
+  list-style-type: none;
+  padding-left: 2rem;
 }
 
 .languages {
