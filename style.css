@@ -1,0 +1,277 @@
+:root {
+  --headercolor: linear-gradient(145deg, #050505, #0a0a0a);
+  --main-bgcolorsecond: #1d1d1d;
+  --main-bgcolor: linear-gradient(
+    103deg,
+    rgba(50, 21, 45, 1) 100%,
+    rgba(46, 20, 41, 1) 100%,
+    rgba(16, 12, 12, 1) 0%
+  );
+  --font-color: #00ff00;
+  --headercolor: #222;
+  --highlight-color: #4eaf32;
+  --link-hover-color: #64d700;
+  --text-shadow-color: rgba(78, 175, 50, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* main page */
+body {
+  background: var(--main-bgcolorsecond);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--font-color);
+  font-family: "Press Start 2P", cursive;
+}
+
+p {
+  color: rgba(224, 224, 224, 0.9);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* nav bar */
+header {
+  background: var(--headercolor);
+  padding: 20px 30px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid var(--highlight-color);
+  transition: background 0.3s ease;
+}
+
+nav.links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+nav.links a {
+  color: #f4f5f4;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  transition: 0.3s ease;
+}
+
+/* efeito nos links da nav */
+nav.links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--highlight-color);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+nav.links a:hover {
+  color: var(--link-hover-color);
+  text-shadow: 0 0 8px var(--text-shadow-color);
+}
+
+nav.links a:hover::after {
+  transform: scaleX(1); /* pesquisar mais a fundo dps */
+  transform-origin: bottom left;
+}
+
+nav.links a:focus {
+  outline: none;
+  border-bottom: 2px solid var(--highlight-color);
+  color: var(--link-hover-color);
+}
+
+/* home page design */
+.index-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h2 {
+  color: rgb(236, 236, 236);
+  margin-top: 20px;
+}
+
+.about {
+  color: var(--font-color);
+}
+
+img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+button.c-button {
+  background-color: #00ff00;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0px 2px 4px rgb(14, 170, 14);
+}
+
+button.c-button:hover {
+  background-color: #00cc00;
+  transform: scale(1.1);
+}
+
+/* contact me */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+  margin-top: 60px;
+  flex: 1;
+}
+
+.form {
+  flex: 1; /* ocupa o restante do espaço */
+}
+
+/* about me */
+.description {
+  margin-top: 5em;
+
+  h2 {
+    color: var(--font-color);
+  }
+
+  h3 {
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+
+.techs ul {
+  list-style: none;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #e0e0e0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+p::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #00ff00;
+  margin-bottom: 15px;
+  animation: slideIn 2s ease-out forwards;
+}
+
+/*SOCIAL ICONS */
+.about-icons .icon-set i:hover {
+  transform: scale(1.2);
+  color: #00cc00;
+}
+
+.about-icons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about-icons .languages i {
+  font-size: 3rem;
+  margin: 0 15px;
+  color: #e2f0e2;
+  text-shadow: 0 0 10px #144d0f, 0 0 20px #295c70;
+  transition: transform 0.3s ease;
+}
+
+.about-icons .languages i:hover {
+  transform: scale(1.2);
+  color: #e2f0e2;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons i {
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #80000000;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+  background-color: #1bbb29;
+}
+
+.social-icons a:hover {
+  color: #149e14;
+}
+
+.social-icons a:active i {
+  transform: scale(1);
+}
+
+/* footer must be like header dont forget */
+footer {
+  background: var(--headercolor);
+  border-top: 2px solid var(--highlight-color);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
