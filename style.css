@@ -20,14 +20,15 @@
 
 @media (max-width: 768px) {
   body {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    padding: 0 10px;
   }
 
   .contact-container {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 10px;
+    gap: 30px;
+    padding: 20px 0;
   }
 
   .contact-form,
@@ -164,18 +165,21 @@ img {
   height: auto;
 }
 
-button.c-button {
+a.c-button {
   background-color: #00ff00;
   color: black;
   border: none;
   padding: 10px 20px;
+  margin-top: 30px;
   font-family: "Press Start 2P", cursive;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   box-shadow: 0px 2px 4px rgb(14, 170, 14);
+  text-decoration: none; /* garantir que o link não tenha sublinhado */
+  display: inline-block; /* para que o link tenha tamanho de botão */
 }
 
-button.c-button:hover {
+a.c-button:hover {
   background-color: #00cc00;
   transform: scale(1.1);
 }
@@ -198,7 +202,12 @@ button.c-button:hover {
 /* about me */
 .description, .about-icons {
   margin: 2rem 2rem 2rem 0;
-  padding-left: 2rem;
+  padding-left: 2rem;;
+}
+
+.description p {
+  line-height: 2;
+  margin: 2rem;
 }
 
 .description h2 {
@@ -212,11 +221,41 @@ button.c-button:hover {
 
 .languages {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 2rem;
-  margin-top: 1rem;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1rem 0;
+}
+
+.languages-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--font-color);
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.languages-item i {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #e2f0e2;
+  text-shadow: 0 0 10px #144d0f, 0 0 20px #295c70;
+}
+
+.languages-item span {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  color: #e0e0e0;
+  letter-spacing: 1px;
+}
+
+.languages-item:hover {
+  transform: scale(1.1);
+  color: var(--link-hover-color);
 }
 
 p {
@@ -246,7 +285,6 @@ p::before {
 
 .about-icons {
   text-align: center;
-  margin-top: 40px;
 }
 
 .about-icons .languages i {
@@ -301,4 +339,71 @@ footer {
   background: var(--headercolor);
   border-top: 2px solid var(--highlight-color);
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* projects page */ 
+
+.projects-section {
+  padding: 60px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.projects-section h1 {
+  font-size: 2rem;
+  color: var(--font-color);
+  text-shadow: 0 0 10px var(--text-shadow-color);
+  margin-bottom: 40px;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 0 40px;
+}
+
+.projects {
+  background: #111;
+  border: 2px solid var(--highlight-color);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects h2 {
+  font-size: 1.2rem;
+  color: var(--font-color);
+  margin-bottom: 20px;
+}
+
+.projects p {
+  font-size: 0.9rem;
+  color: #dcdcdc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.projects a {
+  text-decoration: none;
+  color: var(--highlight-color);
+  font-family: "Orbitron", sans-serif;
+  border: 1px solid var(--highlight-color);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.projects a:hover {
+  background: var(--highlight-color);
+  color: #000;
+  transform: scale(1.05);
+}
+
+.projects:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ff00a9;
 }
